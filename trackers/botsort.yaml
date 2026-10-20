@@ -1,0 +1,14 @@
+track_high_thresh: 0.5
+track_low_thresh: 0.1
+new_track_thresh: 0.6
+track_buffer: 30
+match_thresh: 0.8
+min_box_area: 10
+
+# BoT-SORT 专属配置
+with_reid: false             # 是否启用 Re-ID（启用后需配置 reid_model）
+proximity_thresh: 0.5        # 外观代价阈值
+appearance_thresh: 0.25      # 外观相似度阈值
+
+# 全局运动补偿 (GMC) - 解决摄像头运动导致的 ID 漂移
+gmc_method: "sof"            # 可选: sof(sparseOptFlow) / ecc / orb / sift

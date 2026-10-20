@@ -1,0 +1,15 @@
+ultralytics>=8.3.0
+boxmot>=10.0.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+scipy>=1.10.0
+lap>=0.4.0
+PyYAML>=6.0
+tqdm>=4.65.0
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+python-multipart>=0.0.9
+
+# TrackEval 不随仓库分发，按下面任一方式安装：
+#   pip install git+https://github.com/JonathonLuiten/TrackEval
+#   git clone https://github.com/JonathonLuiten/TrackEval libs/TrackEval

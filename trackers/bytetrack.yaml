@@ -1,0 +1,7 @@
+track_high_thresh: 0.5       # 第一次关联的高置信度阈值
+track_low_thresh: 0.1        # 低置信度检测保留下限（关键：不丢失遮挡目标）
+new_track_thresh: 0.6        # 新轨迹初始化置信度阈值
+track_buffer: 30             # 轨迹丢失后最多保留帧数（30帧 ≈ 1秒@30fps）
+match_thresh: 0.8            # 第一次关联 IoU 匹配阈值
+min_box_area: 10             # 过滤极小误检框（像素面积）
+mot20: false                 # 是否为 MOT20 密集场景模式

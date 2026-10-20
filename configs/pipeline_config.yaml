@@ -1,0 +1,54 @@
+# ============================================================
+# YOLOv11 多目标人物检测与跟踪 — 全局配置
+# ============================================================
+
+# ---------- 检测器配置 ----------
+detector:
+  model: "models/yolo11m_person.pt"   # 微调后权重（A+B 数据集，mAP50=0.946）
+  conf: 0.35                           # 置信度阈值
+  iou: 0.45                            # NMS IoU 阈值
+  imgsz: 640                           # 推理输入尺寸
+  classes: [0]                         # 只检测 person (class 0)
+  max_det: 300                         # 单帧最大检测数
+  half: true                           # FP16 推理加速（需要 GPU）
+  device: "0"                          # GPU 设备 ID，"cpu" 表示 CPU
+
+# ---------- 跟踪器配置 ----------
+tracker:
+  type: "bytetrack"                    # 可选: bytetrack / botsort / strongsort
+  config_file: "trackers/bytetrack.yaml"
+  reid_model: "osnet_x0_25_msmt17.pt"
+
+# ---------- 视频源配置 ----------
+source:
+  type: "camera"                       # 可选: camera / video / rtsp
+  camera_id: 0                         # USB 摄像头 ID
+  # video_path: "data/test.mp4"        # 视频文件路径（type=video 时使用）
+  # rtsp_url: "rtsp://..."             # RTSP 地址（type=rtsp 时使用）
+
+# ---------- 可视化配置 ----------
+visualizer:
+  show: true                           # 是否显示窗口
+  save_video: false                    # 是否保存结果视频
+  output_path: "results/output.mp4"   # 保存路径
+  trail_len: 30                        # 轨迹历史帧数
+  show_fps: true
+  show_count: true
+
+# ---------- 业务功能配置 ----------
+analytics:
+  enable_counting: true                # 人数统计
+  enable_heatmap: false                # 热力图（会降低性能）
+  # trip_wire:                         # 越线检测区域（可选）
+  #   - name: "入口"
+  #     line: [[100, 400], [540, 400]] # 两点定义直线
+
+# ---------- 训练配置 ----------
+train:
+  data: "data/merged_dataset/dataset.yaml"
+  epochs: 50
+  imgsz: 640
+  batch: 16
+  lr0: 0.0001
+  freeze: 10                           # 冻结前 N 层
+  workers: 4
