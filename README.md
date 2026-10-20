@@ -153,4 +153,6 @@ python tools/eval_mot17.py --tracker-name yolo_bytetrack
 
 ## 许可
 
-代码 MIT。第三方组件：Ultralytics YOLO（AGPL-3.0）、BoxMOT（MIT）、TrackEval（MIT）。
+**AGPL-3.0**，见 [LICENSE](LICENSE)。原因：本项目通过 ultralytics 调用 YOLO11，Ultralytics 的 AGPL-3.0 具有传染性，衍生作品须以同一许可开源；**闭源商用需向 Ultralytics 购买商业授权**。
+
+其余第三方组件：BoxMOT（MIT）、TrackEval（MIT）、FastAPI（MIT）、Vue（MIT）。所附模型权重与 MOT17 数据集均未随仓库分发。
