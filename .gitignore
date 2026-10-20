@@ -1,0 +1,47 @@
+# 模型权重
+models/*.pt
+models/*.onnx
+models/*.engine
+*.pt
+*.pth
+
+# 数据集
+data/
+MOT17/
+datasets/
+
+# 运行产物
+results/
+runs/
+backend/generated/
+backend/uploads/
+workspace/
+
+# 第三方
+libs/TrackEval/
+
+# 运行时生成
+configs/_runtime_*.yaml
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 前端
+frontend/node_modules/
+frontend/dist/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# 本机环境相关
+.agents/
+.claude/
+skills-lock.json
+torch_test.py
